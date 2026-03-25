@@ -1,21 +1,37 @@
 # repasse-seguro-v3
 
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
+Base frontend do Repasse Seguro v3 com React, TypeScript, Vite, shadcn/ui e Supabase.
 
-## Adding components
-
-To add components to your app, run the following command:
+## Setup
 
 ```bash
-npx shadcn@latest add button
+npm install
+cp .env.example .env
+npm run dev
 ```
 
-This will place the ui components in the `src/components` directory.
+Para desenvolvimento local com Supabase CLI, o projeto também pode usar um `.env.local`.
 
-## Using components
+## Supabase
 
-To use the components in your app, import them as follows:
+```bash
+npm run supabase:start
+npm run supabase:status
+npm run supabase:stop
+```
 
-```tsx
-import { Button } from "@/components/ui/button"
+Para vincular o projeto local a um projeto cloud existente:
+
+```bash
+npm run supabase:link -- --project-ref <project-ref>
+```
+
+## Variáveis de ambiente
+
+Preencha o arquivo `.env` ou `.env.local` com:
+
+```bash
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+SUPABASE_PROJECT_REF=
 ```
