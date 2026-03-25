@@ -1,7 +1,13 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@repasse-seguro/ui": ["./src/index.ts"],
+      "@repasse-seguro/ui/*": ["./src/*"]
+    }
   },
   "include": ["src"]
 }
