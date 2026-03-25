@@ -1,16 +1,31 @@
 # repasse-seguro-v3
 
-Base frontend do Repasse Seguro v3 com React, TypeScript, Vite, shadcn/ui e Supabase.
+Monorepo/Turborepo do Repasse Seguro v3, com workspace web em Vite/React e Supabase na raiz.
+
+## Estrutura
+
+- `apps/web`: frontend web principal
+- `packages/ui`: workspace compartilhado para componentes e exports cross-app
+- `supabase`: configuração local do Supabase CLI
+- `docs` e `frameworks`: documentação funcional e operacional
 
 ## Setup
 
 ```bash
 npm install
-cp .env.example .env
-npm run dev
+cp apps/web/.env.example apps/web/.env.local
+npm run dev:web
 ```
 
-Para desenvolvimento local com Supabase CLI, o projeto também pode usar um `.env.local`.
+## Scripts do Monorepo
+
+```bash
+npm run dev
+npm run dev:web
+npm run build
+npm run lint
+npm run typecheck
+```
 
 ## Supabase
 
@@ -26,9 +41,9 @@ Para vincular o projeto local a um projeto cloud existente:
 npm run supabase:link -- --project-ref <project-ref>
 ```
 
-## Variáveis de ambiente
+## Variáveis de ambiente do Web
 
-Preencha o arquivo `.env` ou `.env.local` com:
+Preencha `apps/web/.env.local` com:
 
 ```bash
 VITE_SUPABASE_URL=

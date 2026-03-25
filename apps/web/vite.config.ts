@@ -5,6 +5,7 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
+  cacheDir: "../../node_modules/.vite/web",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
