@@ -19,6 +19,9 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+  },
+  {
+    files: ['src/components/ui/**/*.{ts,tsx}', 'src/components/theme-provider.tsx'],
     rules: {
       'react-refresh/only-export-components': 'off',
     },
